@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-feature-values "Felgine" {
+  @swash {
+    fancy: 1;
+  }
+}
+
+* {
+  min-width: 0;
+}
+body {
+  overscroll-behavior: none;
+  margin: 0;
+}
+.normal {
+  font-variant-ligatures: normal;
+}
+
+.none {
+  font-variant-ligatures: none;
+}
+
+.common-ligatures {
+  font-variant-ligatures: common-ligatures;
+}
+
+.no-common-ligatures {
+  font-variant-ligatures: no-common-ligatures;
+}
+
+.discretionary-ligatures {
+  font-variant-ligatures: discretionary-ligatures;
+}
+
+.no-discretionary-ligatures {
+  font-variant-ligatures: no-discretionary-ligatures;
+}
+
+.historical-ligatures {
+  font-variant-ligatures: historical-ligatures;
+}
+
+.no-historical-ligatures {
+  font-variant-ligatures: no-historical-ligatures;
+}
+
+.contextual {
+  font-variant-ligatures: contextual;
+}
+
+.no-contextual {
+  font-variant-ligatures: no-contextual;
+}
+
+.variant {
+  font-feature-settings:
+    "dlig" on,
+    "ss01" on,
+    "ss02" on,
+    "ss03" on,
+    "ss04" on;
+}
+.cl-card {
+  z-index: 3;
+  background: #1a1a1a;
+  --tw-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.3);
+  --tw-shadow-colored: 10px 10px 10px var(--tw-shadow-color),
+    0 10px 10px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-border-opacity: 1;
+  border-color: rgb(38 38 38 / var(--tw-border-opacity));
+  border-width: 1px;
+}
+.cl-headerTitle {
+  color: white;
+}
+.cl-headerSubtitle {
+  color: white;
+}
+.cl-formFieldLabel {
+  color: white;
+}
+.cl-formFieldInput {
+  background-color: white;
+}
+.cl-identityPreviewText {
+  color: white;
+}
+.cl-formButtonPrimary {
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+/* html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+} */

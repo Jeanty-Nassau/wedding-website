@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum RsvpStatus {
+  PENDING
+  ATTENDING
+  DECLINED
+}
+
+enum MealChoice {
+  BEEF_FILLET
+  PRAWN_LINGUINE
+  VEGETARIAN
+  KIDS_MEAL
+}
+
+model Invitation {
+  id          String   @id @default(cuid())
+  clerkUserId String?  @unique
+  isDemo      Boolean  @default(false)
+  guests      Guest[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Guest {
+  id                  String   @id @default(cuid())
+  invitationId        String
+  invitation          Invitation @relation(fields: [invitationId], references: [id], onDelete: Cascade)
+  name                String
+  rsvpStatus          RsvpStatus @default(PENDING)
+  mealChoice          MealChoice?
+  dietaryRequirements String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([invitationId])
+}
