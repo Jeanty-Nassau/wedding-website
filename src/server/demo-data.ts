@@ -1,4 +1,4 @@
-import { MealChoice, PrismaClient, RsvpStatus } from "@prisma/client";
+import { MealChoice, RsvpStatus, type PrismaClient } from "@prisma/client";
 
 import { DEMO_INVITATION_ID } from "./demo";
 
