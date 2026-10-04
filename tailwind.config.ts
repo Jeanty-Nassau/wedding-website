@@ -6,10 +6,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        mothenary: ["Mothenary", "var(--font-montaga)", "serif"],
-        tanPearl: ["TanPearl", "var(--font-montaga)", "serif"],
+        mothenary: ["Mothenary", "serif"],
+        tanPearl: ["TanPearl", "serif"],
         sans: ["var(--font-sans)", ...fontFamily.sans],
-        violentica: ["Violentica", "var(--font-montaga)", "serif"],
+        violentica: ["Violentica", "serif"],
       },
     },
   },

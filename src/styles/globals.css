@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Mothenary;
+  src: url("/fonts/MothenaryRegular.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: TanPearl;
+  src: url("/fonts/TAN-PEARL.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Violentica";
+  src: url("/fonts/Violentica.ttf") format("truetype");
+  font-display: swap;
+}
+
 @font-feature-values "Felgine" {
   @swash {
     fancy: 1;
@@ -93,23 +111,3 @@ body {
 .cl-formButtonPrimary {
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
-/* html.lenis,
-html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
-} */
