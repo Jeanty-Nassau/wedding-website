@@ -6,10 +6,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        mothenary: ["Brush Script MT", "Segoe Script", "cursive"],
-        tanPearl: ["Georgia", "Times New Roman", "serif"],
+        mothenary: ["var(--font-script)", "cursive"],
+        tanPearl: ["var(--font-display)", "serif"],
         sans: ["var(--font-sans)", ...fontFamily.sans],
-        violentica: ["Brush Script MT", "Segoe Script", "cursive"],
+        violentica: ["var(--font-script)", "cursive"],
       },
     },
   },
