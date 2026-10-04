@@ -4,15 +4,8 @@ import { cookies } from "next/headers";
 import { ClerkProvider } from "@clerk/nextjs";
 import { TRPCReactProvider } from "../trpc/react";
 import { GeistSans } from "geist/font/sans";
-import { Montaga } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
-
-const montaga = Montaga({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-montaga",
-});
 
 export const metadata = {
   title: "Jeanty & Trinesha | Wedding Guest Experience",
@@ -41,7 +34,7 @@ export default function RootLayout({
         },
       }}
     >
-      <html lang="en" className={`${GeistSans.className} ${montaga.variable}`}>
+      <html lang="en" className={GeistSans.className}>
         <TRPCReactProvider cookies={cookies().toString()}>
           <body className="bg-[#1A1A1A]">
             <Toaster />
