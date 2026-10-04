@@ -4,8 +4,21 @@ import { cookies } from "next/headers";
 import { ClerkProvider } from "@clerk/nextjs";
 import { TRPCReactProvider } from "../trpc/react";
 import { GeistSans } from "geist/font/sans";
+import { Allura, Cormorant_Garamond } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
+
+const scriptFont = Allura({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-script",
+});
+
+const displayFont = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-display",
+});
 
 export const metadata = {
   title: "Jeanty & Trinesha | Wedding Guest Experience",
@@ -34,7 +47,10 @@ export default function RootLayout({
         },
       }}
     >
-      <html lang="en" className={GeistSans.className}>
+      <html
+        lang="en"
+        className={`${GeistSans.className} ${scriptFont.variable} ${displayFont.variable}`}
+      >
         <TRPCReactProvider cookies={cookies().toString()}>
           <body className="bg-[#1A1A1A]">
             <Toaster />
