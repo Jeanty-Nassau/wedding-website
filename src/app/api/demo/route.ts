@@ -1,11 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { DEMO_COOKIE_NAME } from "../../../server/demo";
-import { ensureDemoInvitation } from "../../../server/demo-data";
-import { db } from "../../../server/db";
 
-export async function GET(request: NextRequest) {
-  await ensureDemoInvitation(db);
+export function GET(request: NextRequest) {
   const destination = request.nextUrl.clone();
   destination.pathname = "/home";
   destination.search = "";
