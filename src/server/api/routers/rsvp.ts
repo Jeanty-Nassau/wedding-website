@@ -4,6 +4,7 @@ import { z } from "zod";
 
 import { createTRPCRouter, protectedProcedure } from "../trpc";
 import { DEMO_INVITATION_ID } from "../../demo";
+import { ensureDemoInvitation } from "../../demo-data";
 
 export const guestUpdateSchema = z
   .object({
@@ -43,6 +44,7 @@ async function resolveInvitationId(ctx: {
   db: typeof import("../../db").db;
 }) {
   if (ctx.viewer.type === "demo") {
+    await ensureDemoInvitation(ctx.db);
     return DEMO_INVITATION_ID;
   }
 
