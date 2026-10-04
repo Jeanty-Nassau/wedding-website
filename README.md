@@ -120,15 +120,9 @@ Open `http://localhost:3000`. To run database integration tests, point `TEST_DAT
 
 ## Deployment And Security
 
-[`vercel.json`](vercel.json) sets Vercel's Build Command to apply committed migrations, ensure the fictional demo records exist, and then run the Next.js production build. Seeding is additive: ordinary deployments preserve recruiter RSVP edits. Configure `DATABASE_URL`, `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`, and `CLERK_SECRET_KEY` in the Vercel project, and ensure the database is PostgreSQL. A deploy will fail rather than serve against a missing schema. `.env.example` contains placeholders only, not working credentials.
+Vercel uses the standard Next.js production build. Database migrations and the additive fictional demo seed are explicit setup and release operations rather than side effects of every frontend build, so ordinary deployments preserve recruiter RSVP edits. Configure `DATABASE_URL`, `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`, and `CLERK_SECRET_KEY` in the deployment environment. Run `npm run db:migrate:deploy` and `npm run db:seed` when provisioning a database or releasing schema or demo-data changes. `.env.example` contains placeholders only, not working credentials.
 
 The demo is intentionally public and writes only fictional demo records. It is not a private invitation system. Do not put real guest data or production secrets in the demo database. See [docs/demo-data.md](docs/demo-data.md) and [docs/security.md](docs/security.md).
-
-## Screenshots
-
-- Landing page: `docs/screenshots/landing-page.png` (placeholder)
-- Event experience: `docs/screenshots/event-experience.png` (placeholder)
-- RSVP flow: `docs/screenshots/rsvp-flow.png` (placeholder)
 
 ## Future Improvements
 
